@@ -1,0 +1,639 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    padding-top: 70px; /* Altura del encabezado fijo */
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.navbar-brand img {
+    height: 50px; /* Ajusta el tamaño del logo */
+}
+
+/* Banner Section */
+.banner {
+    background: url('/images/banner1.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 85vh; /* Ajusta la altura del banner */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 0 50px;
+    width: 100%;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3); /* Efecto de viñeta para destacar el texto */
+}
+
+.banner-content {
+    color: white;
+    max-width: 600px;
+    z-index: 1; /* Asegura que el texto esté por encima de la viñeta */
+}
+
+.banner-content h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif; /* Fuente para los títulos */
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Open Sans', sans-serif; /* Fuente para los textos */
+}
+
+.banner-content button {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: #f8f9fa; /* Color de fondo claro */
+}
+
+.pricing-box, .feature-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar-brand {
+        margin: auto;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .banner-content {
+        margin-bottom: 20px;
+    }
+
+    .banner-image img {
+        max-height: 40vh;
+    }
+
+    .product-image, .product-text {
+        flex: 1;
+        text-align: center;
+    }
+
+    .product-text {
+        padding-left: 0;
+    }
+
+    .product-image img {
+        max-width: 100%;
+    }
+}
+
+/* New Section with Image and Text */
+#product-info .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 70%; /* Ajusta el ancho de la sección */
+}
+
+.product-image img {
+    max-width: 100%; /* Tamaño aumentado */
+    height: auto;
+    border-radius: 30px; /* Bordes muy redondeados */
+    animation: fadeInRight 1s ease-in-out; /* Animación de entrada */
+}
+
+.product-text {
+    max-width: 50%;
+    text-align: center;
+    margin-left: 3rem; /* Aumenta el margen a la derecha */
+}
+
+.product-text h2 {
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif; /* Fuente para los títulos */
+}
+
+.product-text p {
+    font-size: 1.00rem;
+    margin-bottom: 1rem;
+    font-family: 'Open Sans', sans-serif; /* Fuente para los textos */
+    line-height: 2.0; /* Espaciado entre líneas */
+}
+
+.product-text button {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    margin-top: 1rem;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animaciones de AOS */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+[data-aos="fade-left"] {
+    opacity: 0;
+    transform: translateX(20px);
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+}
+
+[data-aos="fade-left"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #0EA9C6;
+    border-color: #0EA9C6;
+    color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Añade la transición gradual */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #de1c49; /* Color de fondo del botón al hacer hover */
+    border-color: #de1c49; /* Color del borde del botón al hacer hover */
+    color: white;
+}
+
+/* General Button Styles */
+.btn-primary {
+    background-color: #0EA9C6;
+    border-color: #0EA9C6;
+    color: white;
+    border-radius: 30px; /* Hacer los botones ovalados */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #de1c49; /* Color de fondo del botón al hacer hover */
+    border-color: #de1c49; /* Color del borde del botón al hacer hover */
+    color: white;
+}
+
+/* Products Section Styles */
+#our-products .section {
+    padding: 60px 0;
+}
+
+#our-products h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000000; /* Color del título */
+}
+
+#our-products p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #000; /* Color del subtítulo */
+}
+
+#our-products .col-md-4 {
+    margin-bottom: 30px;
+}
+
+#our-products .col-md-4 img {
+    border-radius: 15px; /* Bordes redondeados */
+    transition: transform 0.3s; /* Transición suave al pasar el ratón */
+}
+
+#our-products .col-md-4 img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+#our-products .col-md-4 h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #000; /* Color del nombre del producto */
+}
+
+#our-products .col-md-4 p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    color: #0EA9C6; /* Color del precio */
+}
+/* Reviews Section Styles */
+.review-box:hover {
+    transform: translateY(-10px); /* Efecto de desplazamiento al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.review-box p {
+    font-family: 'Open Sans', sans-serif; /* Tipografía acorde al resto del sitio */
+    font-size: 1rem; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea */
+    color: #333; /* Color del texto */
+}
+
+.review-box .reviewer-info {
+    margin-top: 15px; /* Margen superior */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.review-box .reviewer-name {
+    font-family: 'Poppins', sans-serif; /* Tipografía acorde al resto del sitio */
+    color: #DE1C49; /* Color personalizado */
+}
+
+.review-box .review-date {
+    font-family: 'Open Sans', sans-serif; /* Tipografía acorde al resto del sitio */
+    color: #777; /* Color gris */
+}
+
+.review-rating span {
+    color: #FFD700; /* Color dorado para las estrellas de calificación */
+    font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+/* Animaciones de AOS */
+#reviews .review-box[data-aos] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+}
+
+#reviews .review-box.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#reviews h2[data-aos] {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out;
+}
+
+#reviews h2.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Features Section Styles */
+#detailed-features {
+    padding-top: 0; /* Quitar el padding superior */
+}
+
+#detailed-features h2 {
+    font-family: 'Poppins', sans-serif; /* Tipografía acorde al resto del sitio */
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+    margin-bottom: 30px; /* Margen inferior */
+    text-align: center;
+}
+
+#detailed-features .feature-number {
+    font-size: 4rem;
+    color: #e0e0e0;
+    font-weight: bold;
+    position: absolute;
+    left: -60px; /* Ajusta la posición de los números hacia la izquierda */
+}
+
+#detailed-features .feature-details {
+    position: relative;
+    padding-left: 4rem;
+    margin-bottom: 2rem; /* Añade separación vertical entre los features */
+}
+
+#detailed-features .feature-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+}
+
+#detailed-features .feature-info p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#detailed-features .col-md-4 img {
+    animation: fadeInOpacity 1s ease-in-out;
+    animation-delay: 1s; /* Ajusta la demora de la animación */
+    animation-fill-mode: both; /* Mantiene el estado final de la animación */
+}
+
+@keyframes fadeInOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#detailed-features .feature-details:nth-child(1) {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#detailed-features .feature-details:nth-child(2) {
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+#detailed-features .feature-details:nth-child(3) {
+    animation: fadeInUp 1.4s ease-in-out;
+}
+
+#detailed-features .feature-details:nth-child(4) {
+    animation: fadeInUp 1.6s ease-in-out;
+}
+
+#detailed-features .feature-details:nth-child(5) {
+    animation: fadeInUp 1.8s ease-in-out;
+}
+
+#detailed-features .feature-details:nth-child(6) {
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Estilo global */
+body {
+    font-family: 'Open Sans', sans-serif; /* Tipografía para el texto */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Tipografía para los títulos */
+}
+
+/* Estilo de la sección de Instagram */
+.instagram-section {
+    padding: 20px; /* Añade un relleno alrededor de la sección */
+    margin-bottom: 40px; /* Añade margen entre la sección de Instagram y el footer */
+}
+
+/* Contenedor del título de la sección de Instagram */
+.section-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo del título de la sección de Instagram */
+.instagram-section h2 {
+    font-family: 'Poppins', sans-serif; /* Usar la fuente Poppins */
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    color: #333; /* Mismo color que el resto de los títulos */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+/* Barra delgada debajo del título */
+.title-underline {
+    width: 50px;
+    height: 4px;
+    background-color: #333; /* Color gris oscuro */
+    margin: 0 auto 20px auto;
+}
+
+/* Contenedor del feed de Instagram */
+#instagram-feed {
+    display: flex; /* Usamos flexbox para alinear las publicaciones */
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    scroll-snap-type: x mandatory; /* Permite el desplazamiento suave entre elementos */
+    -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en dispositivos táctiles */
+    scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+    -ms-overflow-style: none; /* Oculta la barra de desplazamiento en IE y Edge */
+    width: 100%; /* El contenedor ocupa todo el ancho disponible */
+    cursor: grab; /* Cambia el cursor a una mano al pasar sobre el contenedor */
+    justify-content: flex-start; /* Asegura que las publicaciones estén alineadas al inicio */
+}
+
+/* Oculta la barra de desplazamiento en Chrome, Safari y Opera */
+#instagram-feed::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilo de cada publicación de Instagram */
+.instagram-post {
+    position: relative; /* Necesario para la superposición */
+    flex: 0 0 auto; /* Evita que las publicaciones se estiren o encojan */
+    width: 350px; /* Ancho ajustado para hacer las publicaciones un 30% más pequeñas */
+    height: 350px; /* Altura ajustada para hacer las publicaciones un 30% más pequeñas */
+    margin: 0 10px; /* Añade un margen horizontal entre las publicaciones */
+    scroll-snap-align: start; /* Alinea la publicación al inicio del contenedor */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    border-radius: 15px; /* Bordes redondeados para cada publicación */
+    transition: transform 0.3s ease; /* Añade una transición suave para la animación */
+}
+
+/* Ajuste de las imágenes dentro de cada publicación */
+.instagram-post img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: 100%; /* La imagen ocupa toda la altura del contenedor */
+    object-fit: cover; /* Cubre toda el área del contenedor, recortando si es necesario */
+    border-radius: 15px; /* Bordes redondeados para las imágenes */
+}
+
+/* Estilo de la superposición */
+.instagram-post .overlay {
+    position: absolute; /* Posiciona la superposición */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 169, 198, 0.8); /* Color azul con opacidad */
+    display: flex; /* Centra el contenido dentro de la superposición */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    opacity: 0; /* Oculta la superposición por defecto */
+    transition: opacity 0.6s ease; /* Transición suave */
+    border-radius: 15px; /* Bordes redondeados para la superposición */
+}
+
+/* Muestra la superposición al pasar el ratón */
+.instagram-post:hover .overlay {
+    opacity: 1;
+}
+
+/* Estilo del ícono de Instagram dentro de la superposición */
+.instagram-post .overlay i {
+    font-size: 50px; /* Tamaño del ícono de Instagram */
+    color: white; /* Color del ícono */
+}
+
+/* Animación de desplazamiento para las imágenes de Instagram */
+.instagram-post:active {
+    transform: scale(0.95); /* Efecto de escala al hacer clic */
+}
+
+/* Estilo de los botones */
+.btn-primary {
+    background-color: #0EA9C6; /* Color de fondo del botón */
+    border-color: #0EA9C6; /* Color del borde del botón */
+    color: white; /* Color del texto del botón */
+    padding: 0.75rem 1.5rem; /* Relleno del botón */
+    font-size: 1.25rem; /* Tamaño de la fuente del botón */
+    border-radius: 30px; /* Bordes redondeados del botón */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+}
+
+/* Estilo del botón al pasar el ratón */
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #DE1C49; /* Color de fondo del botón al pasar el ratón */
+    border-color: #DE1C49; /* Color del borde del botón al pasar el ratón */
+    color: white; /* Color del texto del botón al pasar el ratón */
+}
+
+/* Estilo del footer */
+.footer {
+    background-color: #333; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el contenido */
+    padding: 0; /* Sin espacio interno */
+}
+
+.footer-logo-container {
+    background-color: white; /* Fondo blanco para el logo */
+    padding: 20px 0; /* Espacio alrededor del logo */
+}
+
+.footer-logo {
+    height: 50px; /* Ajusta la altura del logo */
+    display: block;
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+.footer-content {
+    padding: 20px 0; /* Espacio interno */
+}
+
+.footer .social-icons {
+    margin-bottom: 15px; /* Espacio debajo de los íconos sociales */
+}
+
+.footer .social-icon {
+    margin: 0 10px; /* Espacio horizontal entre los íconos sociales */
+    color: white; /* Color de los íconos sociales */
+    font-size: 24px; /* Tamaño de los íconos sociales */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.footer .social-icon:hover {
+    color: #DE1C49; /* Color de los íconos al pasar el ratón */
+}
+
+/* Estilo de la sección de reseñas */
+.review-box {
+    background-color: white; /* Fondo blanco para las cajas de reseñas */
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.review-box:hover {
+    transform: translateY(-10px); /* Efecto de desplazamiento al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.review-box p {
+    font-family: 'Open Sans', sans-serif; /* Tipografía acorde al resto del sitio */
+    font-size: 1rem; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea */
+    color: #333; /* Color del texto */
+}
+
+.review-box .reviewer-info {
+    margin-top: 15px; /* Margen superior */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.review-box .reviewer-name {
+    font-family: 'Poppins', sans-serif; /* Tipografía acorde al resto del sitio */
+    color: #DE1C49; /* Color personalizado */
+}
+
+.review-box .review-date {
+    font-family: 'Open Sans', sans-serif; /* Tipografía acorde al resto del sitio */
+    color: #777; /* Color gris */
+}
+
+.review-rating span {
+    color: #FFD700; /* Color dorado para las estrellas de calificación */
+    font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+
+/* Navbar Styles */
+.navbar-nav .nav-item {
+    margin-right: 40px; /* Aumentar margen para mayor separación */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem; /* Tamaño del texto */
+}
